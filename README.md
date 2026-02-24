@@ -7,17 +7,17 @@ Project title: Inter-Departmental LAN Connectivity using routers and switches <b
 Author: Thato Maputla <br>
 Date: 24 February 2026
 
-## OVERVIEW
+#### OVERVIEW
 This project shows a network between 2 departments in a company using the network address (192.168.40.0). All the end-user devices are configured with appropriate IP addresses, subnet masks, and gateways. The departments each consist of 3 end-user devices connected through dedicated switches and a central router. This design ensures that devices within and across departments can communicate seamlessly.
 
-## OBJECTIVES
+#### OBJECTIVES
 1. Implement subnetting to create 2 departmental subnets from a single network ID
 2. Configure switches to communicate within the departments.
 3. Configure the router to enable communication across the network.
 4. Verify connectivity between all devices through simulation tools.
 
 
-## NETWORK TOPOLOGY (Extended star)
+#### NETWORK TOPOLOGY (Extended star)
 Devices used: <br>
 - 1 Router (central interconnection point)
 - 1 Laptop (for one department)
@@ -31,7 +31,7 @@ Each department is connected to its own switch. The switches are connected to th
 ![Network Topology](images/Topology.png)
 <br>
 
-## SUBNETTING 
+#### SUBNETTING 
 Provided network: 192.168.40.0 <br>
 Number of subnets required: 2 <br>
 
@@ -56,7 +56,7 @@ CIDR notation = 192.168.40.128/25 <br>
 Valid host range = 192.168.40.129 -> 192.168.40.254 <br>
 Broadcast ID = 192.168.40.255 <br>
 
-## IP ADDRESSING SCHEME
+#### IP ADDRESSING SCHEME
 1. HR Department (192.168.40.128/25)
 - PC 0: IP address=192.168.40.130 ; Subnet mask=255.255.255.128 ; Default gateway=192.168.40.129 
 - Laptop0: IP address=192.168.40.131 ; Subnet mask=255.255.255.128 ; Default gateway=192.168.40.129
@@ -69,22 +69,22 @@ Broadcast ID = 192.168.40.255 <br>
 - Printer1: IP address=192.168.40.4 ; Subnet mask=255.255.255.128 ; Default gateway=192.168.40.1
 - Router Interface gig0/0: IP address=192.168.40.1 ; Subnet mask=255.255.255.128
 
-## Network Configuration
+#### NETWORK CONFIGURATION 
 
-### HR Department (192.168.40.128/25)
+###### HR Department (192.168.40.128/25)
 - PC0: 192.168.40.130 / 255.255.255.128 / Gateway: 192.168.40.129
 - Laptop0: 192.168.40.131 / 255.255.255.128 / Gateway: 192.168.40.129
 - Printer0: 192.168.40.132 / 255.255.255.128 / Gateway: 192.168.40.129
 - Router Gig0/1: 192.168.40.129 / 255.255.255.128
 
-### Tech Support (192.168.40.0/25)
+###### Tech Support (192.168.40.0/25)
 - PC1: 192.168.40.2 / 255.255.255.128 / Gateway: 192.168.40.1
 - PC2: 192.168.40.3 / 255.255.255.128 / Gateway: 192.168.40.1
 - Printer1: 192.168.40.4 / 255.255.255.128 / Gateway: 192.168.40.1
 - Router Gig0/0: 192.168.40.1 / 255.255.255.128
 
 
-## IP Addressing Scheme
+#### IP Addressing Scheme
 
 | Department      | Device        | IP Address       | Subnet Mask       | Default Gateway   |
 |-----------------|---------------|------------------|-------------------|-------------------|
@@ -97,7 +97,7 @@ Broadcast ID = 192.168.40.255 <br>
 |                 | Printer1      | 192.168.40.4     | 255.255.255.128   | 192.168.40.1      |
 |                 | Router Gig0/0 | 192.168.40.1     | 255.255.255.128   | —                 |
 
-## CONFIGURATION STEPS (sanitized)
+#### CONFIGURATION STEPS (sanitized)
 1. Router:
    Router> en <br>
 		Router# config t <br>
@@ -116,14 +116,15 @@ Broadcast ID = 192.168.40.255 <br>
 
 3. End devices: Manually assigned IP addresses, subnet masks, and gateways.
 
-## TESTING & VERIFICATION 
+#### TESTING & VERIFICATION 
 Ping tests: <br>
 PC0 -> Laptop0 (same subnet) <br>
 PC0 -> Printer1 (different subnet, routed via router) <br>
 Laptop0 -> PC1 (cross-department communication) <br>
-Results: All tests were successful, showing evidence of communication across departments. <br>
+Results: All tests were successful, indicating communication across departments. <br>
+![Network Topology](images/Topology.png)
 
-## CONCLUSION 
-This project demonstrated the fundamentals of LAN design and inter-departmental communication using Cisco Packet Tracer. Key skills practiced: subnetting & IP addressing, CIDR notation application, router configuration, OSI Model application, switch setup, and connectivity testing. The design can be scaled further by adding more departments, VLANs, or advanced routing protocols.
+#### CONCLUSION 
+This project demonstrated the fundamentals of LAN design and inter-departmental communication using Cisco Packet Tracer. Key skills practiced: subnetting & IP addressing, application of CIDR notation, router configuration, application of the OSI Model, switch setup, and connectivity testing. The design can be scaled further by adding more departments, VLANs, or advanced routing protocols.
 
 
