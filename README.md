@@ -97,7 +97,7 @@ Broadcast ID = 192.168.40.255 <br>
 |                 | Printer1      | 192.168.40.4     | 255.255.255.128   | 192.168.40.1      |
 |                 | Router Gig0/0 | 192.168.40.1     | 255.255.255.128   | —                 |
 
-### CONFIGURATION STEPS (sanitized)
+### CLI CONFIGURATION (sanitized)
 1. Router:
    Router> en <br>
 		Router# config t <br>
